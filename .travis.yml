@@ -3,11 +3,16 @@ language: cpp
 compiler:
   - gcc
   - clang
+
 os:
   - linux
   - osx
+
+python:
+  - "2.7"
 
 # command to run tests
 script: 
   - make
   - make test
+  - python --version
