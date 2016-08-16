@@ -1,5 +1,5 @@
-CC = g++
-OMPFLAG = -fopenmp
+CC = gcc
+OMPFLAG = -lstdc++
 OPTFLAG = -O3
 
 .PHONY: clear
@@ -7,7 +7,7 @@ OPTFLAG = -O3
 all: main.o
 
 main.o: main.cpp
-	$(CC) $(OPTFLAG) main.cpp -o main.o
+	$(CC) $(OPTFLAG) $(OMPFLAG) main.cpp -o main.o
 
 test:
 	./main.o
