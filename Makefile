@@ -6,7 +6,7 @@ ifeq ($(CXX),)
 endif
 LFLAG = -lstdc++
 FFLAG = -fopenmp
-BOOST = /usr/local/Cellar/boost
+BOOST = /usr/local/Cellar/boost/1.55.0_2
 OPTFLAG = -O3
 
 .PHONY: clear
