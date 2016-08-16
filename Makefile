@@ -10,7 +10,7 @@ OPTFLAG = -O3
 
 .PHONY: clear
 
-all: main.o test_sample.o
+all: main.o
 
 main.o: main.cpp
 	$(CC) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
