@@ -9,11 +9,6 @@ os:
   - osx
 
 # command to run tests
-before_script:
-  - brew update
-  - brew unlink boost
-  - brew install boost
-
 script: 
   - make
   - make test
