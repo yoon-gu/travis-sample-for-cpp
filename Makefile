@@ -8,7 +8,7 @@ OPTFLAG = -O3
 all: main.o
 
 main.o: main.cpp
-	$(CC) $(OPTFLAG) $(LFLAG) main.cpp -o main.o
+	$(CC) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
 
 test:
 	./main.o
