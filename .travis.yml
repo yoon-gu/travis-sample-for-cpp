@@ -5,12 +5,8 @@ compiler:
   - clang
 
 os:
-  # - linux
+  - linux
   - osx
-
-before_install:
-  - brew update
-  - brew install boost
 
 # command to run tests
 script: 
