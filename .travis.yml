@@ -7,4 +7,6 @@ os:
   - osx
 
 # command to run tests
-script: make test
+script: 
+  - make
+  - make test
