@@ -10,6 +10,7 @@ os:
 
 # command to run tests
 before_script:
+  - ls /usr/local/Cellar/
   - brew install boost
 #   - sudo apt-get install libboost-thread-dev libboost-system-dev libboost-test-dev
 
