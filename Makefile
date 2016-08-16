@@ -6,6 +6,7 @@ ifeq ($(CXX),)
 endif
 LFLAG = -lstdc++
 FFLAG = -fopenmp
+BOOST = /usr/local/Cellar/boost
 OPTFLAG = -O3
 
 .PHONY: clear
@@ -16,7 +17,7 @@ main.o: main.cpp
 	$(CC) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
 
 test_sample.o: test_sample.cpp
-	$(CXX) -coverage -O0 -Wall test_sample.cpp $(LFLAG) -o test_sample.o
+	$(CXX) -coverage -O0 -Wall -I $(BOOST) test_sample.cpp $(LFLAG) -o test_sample.o
 
 test:
 	$(CC) -coverage -O0 main.cpp $(LFLAG)
