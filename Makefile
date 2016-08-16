@@ -13,9 +13,10 @@ main.o: main.cpp
 	$(CC) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
 
 test:
-	$(CC) -coverage -O0 main.cpp
+	$(CC) -coverage -O0 main.cpp $(LFLAG)
 	./main.o
 	gcov main.cpp
 
 clear:
 	rm *.o
+	rm *.gcov
