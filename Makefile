@@ -1,4 +1,6 @@
-CC = gcc
+ifeq ($(CC),)
+    CC = gcc
+endif
 LFLAG = -lstdc++
 FFLAG = -fopenmp
 OPTFLAG = -O3
