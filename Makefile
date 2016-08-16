@@ -1,6 +1,9 @@
 ifeq ($(CC),)
     CC = gcc
 endif
+ifeq ($(CXX),)
+    CXX = g++
+endif
 LFLAG = -lstdc++
 FFLAG = -fopenmp
 OPTFLAG = -O3
@@ -13,7 +16,7 @@ main.o: main.cpp
 	$(CC) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
 
 test_sample.o: test_sample.cpp
-	$(CC) -coverage -O0 -Wall test_sample.cpp $(LFLAG) -o test_sample.o
+	$(CXX) -coverage -O0 -Wall test_sample.cpp $(LFLAG) -o test_sample.o
 
 test:
 	$(CC) -coverage -O0 main.cpp $(LFLAG)
