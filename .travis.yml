@@ -5,7 +5,7 @@ compiler:
   - clang
 
 os:
-  # - linux
+  - linux
   - osx
 
 # command to run tests
