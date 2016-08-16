@@ -10,7 +10,9 @@ os:
 
 # command to run tests
 before_script:
-  - ls /usr/local/Cellar/boost
+  - brew update
+  - brew unlink boost
+  - brew install boost
 
 script: 
   - make
