@@ -9,8 +9,8 @@ os:
   - osx
 
 # command to run tests
-# before_script:
-#   - sudo apt-get update -qq
+before_script:
+  - brew install boost
 #   - sudo apt-get install libboost-thread-dev libboost-system-dev libboost-test-dev
 
 script: 
