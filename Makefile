@@ -13,17 +13,18 @@ OPTFLAG = -O3
 all: main.o hello.o
 
 main.o: main.cpp
-	$(CC) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
+	$(CXX) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
 
 hello.o: hello.cpp
 	$(CXX) -o hello.o hello.cpp -lboost_unit_test_framework
 
 test:
-	$(CC) -coverage -O0 main.cpp $(LFLAG)
-	$(CXX) -coverage hello.cpp -lboost_unit_test_framework $(LFLAG)
+	$(CXX) -fprofile-arcs -ftest-coverage main.cpp -lboost_unit_test_framework
+	$(CXX) -fprofile-arcs -ftest-coverage hello.cpp -lboost_unit_test_framework
 	./main.o
 	./hello.o
-	gcov main.cpp hello.cpp
+	gcov main.cpp
+	gcov hello.cpp
 
 clear:
 	rm *.o
