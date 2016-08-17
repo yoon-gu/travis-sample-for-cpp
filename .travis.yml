@@ -6,7 +6,6 @@ compiler:
 
 os:
   - linux
-  - osx
 
 # command to run tests
 script: 
