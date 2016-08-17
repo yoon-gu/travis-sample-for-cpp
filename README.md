@@ -3,3 +3,5 @@
 
 # travis-sample-for-cpp
 travis sample for cpp
+
+1. `sudo apt-get install libboost-all-dev`
