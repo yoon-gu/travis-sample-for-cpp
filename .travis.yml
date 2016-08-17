@@ -12,7 +12,7 @@ os:
 
 # command to run tests
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; sudo apt-get install libboost-test-dev; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; sudo apt-get install libboost-test-dev; fi
 script: 
   - make
   - make test
