@@ -1,3 +1,5 @@
+sudo: true
+
 language: cpp
 
 compiler:
@@ -8,6 +10,8 @@ os:
   - linux
 
 # command to run tests
+install:
+  - sudo apt-get install libboost-test-dev
 script: 
   - make
   - make test
