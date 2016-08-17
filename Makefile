@@ -6,7 +6,7 @@ ifeq ($(CXX),)
 endif
 LFLAG = -lstdc++
 FFLAG = -fopenmp
-OPTFLAG = -O0
+OPTFLAG = -O3
 
 .PHONY: clear
 
@@ -16,11 +16,11 @@ main.o: main.cpp
 	$(CXX) $(OPTFLAG) main.cpp $(LFLAG) -o main.o
 
 hello.o: hello.cpp
-	$(CXX) -o hello.o hello.cpp -lboost_unit_test_framework
+	$(CXX) $(OPTFLAG) hello.cpp -lboost_unit_test_framework -o hello.o
 
 test:
-	$(CXX) -fprofile-arcs -ftest-coverage main.cpp -lboost_unit_test_framework
-	$(CXX) -fprofile-arcs -ftest-coverage hello.cpp -lboost_unit_test_framework
+	$(CXX) -fprofile-arcs -ftest-coverage main.cpp -lboost_unit_test_framework -o main.o
+	$(CXX) -fprofile-arcs -ftest-coverage hello.cpp -lboost_unit_test_framework -o hello.o
 	./main.o
 	./hello.o
 	gcov main.cpp
@@ -28,4 +28,4 @@ test:
 
 clear:
 	rm *.o
-	rm *.gcov
+	rm *.gc*
