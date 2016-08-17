@@ -6,7 +6,7 @@ ifeq ($(CXX),)
 endif
 LFLAG = -lstdc++
 FFLAG = -fopenmp
-OPTFLAG = -O3
+OPTFLAG = -O0
 
 .PHONY: clear
 
